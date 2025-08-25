@@ -8,6 +8,7 @@ import TranslateDetail from "./pages/TranslateDetail";
 import TranslateCreate from "./pages/TranslateCreate";
 import LessonView from "./pages/LessonView";
 import LessonCreate from "./pages/LessonCreate";
+import LessonsList from "./pages/LessonsList";  // <-- NEW import
 import AuthProvider, { useAuth } from "./context/AuthContext";
 import "./styles/global.css";
 
@@ -30,22 +31,45 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
-            <Route path="/translate" element={
-              <Private><TranslateList /></Private>
-            } />
-            <Route path="/translate/create" element={
-              <Private><TranslateCreate /></Private>
-            } />
-            <Route path="/translate/:id" element={
-              <Private><TranslateDetail /></Private>
-            } />
+            <Route
+              path="/translate"
+              element={
+                <Private><TranslateList /></Private>
+              }
+            />
+            <Route
+              path="/translate/create"
+              element={
+                <Private><TranslateCreate /></Private>
+              }
+            />
+            <Route
+              path="/translate/:id"
+              element={
+                <Private><TranslateDetail /></Private>
+              }
+            />
 
-            <Route path="/lesson/:id" element={
-              <Private><LessonView /></Private>
-            } />
-            <Route path="/lesson/create" element={
-              <Private><LessonCreate /></Private>
-            } />
+            {/* NEW: list all lessons */}
+            <Route
+              path="/lessons"
+              element={
+                <Private><LessonsList /></Private>
+              }
+            />
+
+            <Route
+              path="/lesson/:id"
+              element={
+                <Private><LessonView /></Private>
+              }
+            />
+            <Route
+              path="/lesson/create"
+              element={
+                <Private><LessonCreate /></Private>
+              }
+            />
           </Routes>
         </main>
       </BrowserRouter>

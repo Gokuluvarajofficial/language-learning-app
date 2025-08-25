@@ -12,7 +12,7 @@ export default function NavBar() {
         <div className="links">
           <NavLink to="/translate">Translate List</NavLink>
           <NavLink to="/translate/create">Create Translate</NavLink>
-          <NavLink to="/lesson/1">Lesson #1</NavLink>
+          <NavLink to="/lessons">Lessons</NavLink>          {/* NEW: list all lessons */}
           <NavLink to="/lesson/create">Create Lesson</NavLink>
         </div>
       )}
